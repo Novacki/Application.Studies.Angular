@@ -1,52 +1,36 @@
-# Prerequisites
-*.d
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+# Created by https://www.toptal.com/developers/gitignore/api/angular
+# Edit at https://www.toptal.com/developers/gitignore?templates=angular
 
-# Linker output
-*.ilk
-*.map
-*.exp
+### Angular ###
+## Angular ##
+# compiled output
+dist/
+tmp/
+app/**/*.js
+app/**/*.js.map
 
-# Precompiled Headers
-*.gch
-*.pch
+# dependencies
+node_modules/
+bower_components/
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
+# IDEs and editors
+.idea/
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
+# misc
+.sass-cache/
+connect.lock/
+coverage/
+libpeerconnection.log/
+npm-debug.log
+testem.log
+typings/
 
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
+# e2e
+e2e/*.js
+e2e/*.map
 
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
+# System Files
+.DS_Store/
 
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+# End of https://www.toptal.com/developers/gitignore/api/angular
