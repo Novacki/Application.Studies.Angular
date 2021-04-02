@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-cadastro',
@@ -9,7 +9,12 @@ export class CadastroComponent implements OnInit {
 
   constructor() { }
 
+  @Output() public login: EventEmitter<boolean> = new EventEmitter<boolean>();
   ngOnInit(): void {
   }
 
+  public isLogin(): void {
+    this.login.emit(false);
+  }
+  
 }
