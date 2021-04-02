@@ -1,11 +1,24 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm-6 d-flex justify-content-end">
+    <div class="col-sm-6 d-flex justify-content-end" [@banner-acesso]="animateState">
       <app-banner></app-banner>
     </div>
 
-    <div class="col-sm-6 d-flex justify-content-start">
-      <app-login></app-login>
-    </div>  
+    <div *ngIf="statePanel; else formLogin" class="col-sm-6 d-flex justify-content-start" 
+      [@painel-acesso]="animateState"
+      (@painel-acesso.start)="initAnimate($event)"
+      (@painel-acesso.done)="endAnimate($event)"
+      >
+      <app-cadastro (login)="changeStatePanel($event)"></app-cadastro>
+    </div> 
+
+    <ng-template #formLogin>
+      <div class="col-sm-6 d-flex justify-content-start" 
+        [@painel-acesso]="animateState"
+        (@painel-acesso.start)="initAnimate($event)"
+        (@painel-acesso.done)="endAnimate($event)">
+        <app-login (register)="changeStatePanel($event)"></app-login>
+      </div> 
+    </ng-template>
   </div>
 </div>
