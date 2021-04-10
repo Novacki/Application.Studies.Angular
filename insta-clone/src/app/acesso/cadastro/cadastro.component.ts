@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import * as firebase from 'firebase';
 import { AutenticacaoService } from 'src/app/autenticacao.service';
 import { Usuario } from '../model/usuario.model';
 
@@ -21,7 +22,6 @@ export class CadastroComponent implements OnInit {
     this.generateForm();
   }
 
-
   public isLogin(): void {
     this.login.emit(false);
   }
@@ -37,9 +37,7 @@ export class CadastroComponent implements OnInit {
 
   public cadastrarUsusario(): void {
     this.autenticacaoService.cadastrarUsuario(this.form.value)
-      .then(response => {
-        this.isLogin();
-      })
+      .then(() =>this.isLogin())
       .catch(reject => console.log(reject));
   }
 }
